@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  value: "22"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: my-nice-age

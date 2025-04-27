@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-busybox
+  labels:
+    app: box
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: box
+  template:
+    metadata:
+      labels:
+        app: box
+    spec:
+      containers:
+      - name: box
+        image: busybox
+        command: ["sleep", "3600"]          
+        env:        
+         - name: name
+           value: "mostafa tarek"
+         - name: age
+           valueFrom:
+            configMapKeyRef:
+              # The ConfigMap containing the value you want to assign to SPECIAL_LEVEL_KEY
+              name: my-nice-age
+              # Specify the key associated with the value
+              key: value

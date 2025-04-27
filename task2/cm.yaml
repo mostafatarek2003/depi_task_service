@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  name: moustafa
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: myname
